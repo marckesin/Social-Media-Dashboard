@@ -1,0 +1,23 @@
+@use "reset";
+@use "variables";
+
+main {
+  margin: auto;
+}
+
+.attribution {
+  font-size: 1rem;
+  text-align: center;
+
+  a {
+    color: variables.$bright-red;
+  }
+}
+
+.container-main {
+  height: 100vh;
+  padding: 0 10rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
