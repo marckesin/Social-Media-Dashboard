@@ -1,14 +1,53 @@
 @use "reset";
 @use "variables";
 
-@mixin dashboard-layout($pos, $justify, $text: center) {
-  grid-area: $pos;
-  padding: 2rem 2rem 1.5rem;
+@mixin dashboard-layout($justify, $font, $text) {
+  padding: 2rem 2rem 1.75rem;
   text-align: $text;
+  background-color: variables.$light-grayish-blue;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease-out;
+
+  &:hover {
+    cursor: pointer;
+    background-color: variables.$light-grayish-blue-hover;
+  }
+
+  div:nth-child(1) {
+    color: variables.$dark-grayish-blue;
+    font-weight: 700;
+  }
+
+  div:nth-child(2) {
+    margin-top: 1.5rem;
+    align-items: baseline;
+  }
 
   div {
     display: flex;
     justify-content: $justify;
+    align-items: center;
+    gap: 0.65rem;
+  }
+
+  h3 {
+    font-size: $font;
+    color: variables.$very-dark-blue;
+    margin-top: 1.35rem;
+  }
+
+  h4 {
+    font-size: $font;
+    color: variables.$very-dark-blue;
+  }
+
+  .followers {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: variables.$dark-grayish-blue;
+    margin-bottom: 1.75rem;
   }
 }
 
@@ -38,55 +77,81 @@ main {
     "d-1 d-2 d-3 d-4"
     "d-5 d-6 d-7 d-8";
 
-  .bg-light-grayish-blue {
-    background-color: variables.$light-grayish-blue;
-    border-radius: 0.5rem;
-  }
-
   .grid-a1 {
     grid-area: a-1;
+    margin-bottom: 1.5rem;
+
+    p {
+      font-weight: 700;
+      color: variables.$dark-grayish-blue;
+      margin-top: 0.5rem;
+    }
   }
+
   .grid-a2 {
     grid-area: a-2;
+    margin-bottom: 1.5rem;
   }
+
   .grid-b1 {
-    @include dashboard-layout(b-1, center);
+    grid-area: b-1;
   }
   .grid-b2 {
-    @include dashboard-layout(b-2, center);
+    grid-area: b-2;
   }
   .grid-b3 {
-    @include dashboard-layout(b-3, center);
+    grid-area: b-3;
   }
   .grid-b4 {
-    @include dashboard-layout(b-4, center);
+    grid-area: b-4;
   }
+
+  .grid-b1,
+  .grid-b2,
+  .grid-b3,
+  .grid-b4 {
+    @include dashboard-layout(center, 3.9rem, center);
+  }
+
   .grid-c1 {
     grid-area: c-1;
+    margin-top: 2rem;
   }
+
   .grid-d1 {
-    @include dashboard-layout(d-1, space-between, left);
+    grid-area: d-1;
   }
   .grid-d2 {
-    @include dashboard-layout(d-2, space-between, left);
+    grid-area: d-2;
   }
   .grid-d3 {
-    @include dashboard-layout(d-3, space-between, left);
+    grid-area: d-3;
   }
   .grid-d4 {
-    @include dashboard-layout(d-4, space-between, left);
+    grid-area: d-4;
   }
   .grid-d5 {
-    @include dashboard-layout(d-5, space-between, left);
+    grid-area: d-5;
   }
   .grid-d6 {
-    @include dashboard-layout(d-6, space-between, left);
+    grid-area: d-6;
   }
   .grid-d7 {
-    @include dashboard-layout(d-7, space-between, left);
+    grid-area: d-7;
   }
   .grid-d8 {
-    @include dashboard-layout(d-8, space-between, left);
+    grid-area: d-8;
+  }
+
+  .grid-d1,
+  .grid-d2,
+  .grid-d3,
+  .grid-d4,
+  .grid-d5,
+  .grid-d6,
+  .grid-d7,
+  .grid-d8 {
+    @include dashboard-layout(space-between, 2.3rem, left);
   }
 }
 
@@ -98,6 +163,20 @@ main {
   justify-content: space-between;
 }
 
+.heading {
+  color: variables.$very-dark-blue;
+}
+
+.text-bright-red {
+  color: variables.$bright-red;
+  font-weight: 700;
+}
+
+.text-lime-green {
+  color: variables.$lime-green;
+  font-weight: 700;
+}
+
 @media (max-width: 991px) {
   .container-main {
     height: auto;
@@ -106,15 +185,7 @@ main {
 
   .container-grid {
     margin-bottom: 3rem;
-    grid-template-areas:
-      "a-1 a-2"
-      "b-1 b-2"
-      "b-3 b-4"
-      "c-1 c-1"
-      "d-1 d-2"
-      "d-3 d-4"
-      "d-5 d-6"
-      "d-7 d-8";
+    grid-template-areas: "a-1 a-2" "b-1 b-2" "b-3 b-4" "c-1 c-1" "d-1 d-2" "d-3 d-4" "d-5 d-6" "d-7 d-8";
   }
 }
 
@@ -126,21 +197,6 @@ main {
 
   .container-grid {
     margin-bottom: 3rem;
-    grid-template-areas:
-      "a-1"
-      "a-2"
-      "b-1"
-      "b-2"
-      "b-3"
-      "b-4"
-      "c-1"
-      "d-1"
-      "d-2"
-      "d-3"
-      "d-4"
-      "d-5"
-      "d-6"
-      "d-7"
-      "d-8";
+    grid-template-areas: "a-1" "a-2" "b-1" "b-2" "b-3" "b-4" "c-1" "d-1" "d-2" "d-3" "d-4" "d-5" "d-6" "d-7" "d-8";
   }
 }
