@@ -1,11 +1,30 @@
 @use "reset";
 @use "variables";
 
+@mixin border-top($color1, $color2) {
+  position: relative;
+  height: 98%;
+  margin-top: auto;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: -5px;
+    left: 0;
+    right: 0;
+    bottom: 1px;
+    background-image: linear-gradient(90deg, $color1, $color2);
+    z-index: -1;
+    border-radius: 0.4rem;
+  }
+}
+
 @mixin dashboard-layout($justify, $font, $text) {
   padding: 2rem 2rem 1.75rem;
   text-align: $text;
   background-color: variables.$light-grayish-blue;
-  border-radius: 0.5rem;
+  border-bottom-left-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
   transition: all 0.2s ease-out;
 
   &:hover {
@@ -65,6 +84,19 @@ main {
   }
 }
 
+.border-top-facebook {
+  @include border-top(variables.$facebook, variables.$facebook);
+}
+.border-top-instagram {
+  @include border-top(variables.$instagram-1, variables.$instagram-2);
+}
+.border-top-twitter {
+  @include border-top(variables.$twitter, variables.$twitter);
+}
+.border-top-youtube {
+  @include border-top(variables.$youtube, variables.$youtube);
+}
+
 .container-grid {
   display: grid;
   grid-auto-columns: 1fr;
@@ -116,6 +148,11 @@ main {
   .grid-c1 {
     grid-area: c-1;
     margin-top: 2rem;
+
+    h2 {
+      font-size: 1.75rem;
+      color: variables.$dark-grayish-blue;
+    }
   }
 
   .grid-d1 {

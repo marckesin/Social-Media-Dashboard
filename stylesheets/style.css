@@ -65,6 +65,74 @@ main {
   color: #dc414c;
 }
 
+.border-top-facebook {
+  position: relative;
+  height: 98%;
+  margin-top: auto;
+}
+.border-top-facebook::before {
+  position: absolute;
+  content: "";
+  top: -5px;
+  left: 0;
+  right: 0;
+  bottom: 1px;
+  background-image: linear-gradient(90deg, #198ff5, #198ff5);
+  z-index: -1;
+  border-radius: 0.4rem;
+}
+
+.border-top-instagram {
+  position: relative;
+  height: 98%;
+  margin-top: auto;
+}
+.border-top-instagram::before {
+  position: absolute;
+  content: "";
+  top: -5px;
+  left: 0;
+  right: 0;
+  bottom: 1px;
+  background-image: linear-gradient(90deg, #fdc468, #df4996);
+  z-index: -1;
+  border-radius: 0.4rem;
+}
+
+.border-top-twitter {
+  position: relative;
+  height: 98%;
+  margin-top: auto;
+}
+.border-top-twitter::before {
+  position: absolute;
+  content: "";
+  top: -5px;
+  left: 0;
+  right: 0;
+  bottom: 1px;
+  background-image: linear-gradient(90deg, #1ca0f2, #1ca0f2);
+  z-index: -1;
+  border-radius: 0.4rem;
+}
+
+.border-top-youtube {
+  position: relative;
+  height: 98%;
+  margin-top: auto;
+}
+.border-top-youtube::before {
+  position: absolute;
+  content: "";
+  top: -5px;
+  left: 0;
+  right: 0;
+  bottom: 1px;
+  background-image: linear-gradient(90deg, #c4032a, #c4032a);
+  z-index: -1;
+  border-radius: 0.4rem;
+}
+
 .container-grid {
   display: grid;
   grid-auto-columns: 1fr;
@@ -104,7 +172,8 @@ main {
   padding: 2rem 2rem 1.75rem;
   text-align: center;
   background-color: #f0f2fa;
-  border-radius: 0.5rem;
+  border-bottom-left-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
   transition: all 0.2s ease-out;
 }
 .container-grid .grid-b1:hover,
@@ -167,6 +236,10 @@ main {
   grid-area: c-1;
   margin-top: 2rem;
 }
+.container-grid .grid-c1 h2 {
+  font-size: 1.75rem;
+  color: #63687e;
+}
 .container-grid .grid-d1 {
   grid-area: d-1;
 }
@@ -202,7 +275,8 @@ main {
   padding: 2rem 2rem 1.75rem;
   text-align: left;
   background-color: #f0f2fa;
-  border-radius: 0.5rem;
+  border-bottom-left-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
   transition: all 0.2s ease-out;
 }
 .container-grid .grid-d1:hover,
