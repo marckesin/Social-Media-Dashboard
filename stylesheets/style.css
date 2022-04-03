@@ -183,9 +183,9 @@ main {
   padding: 2rem 2rem 1.75rem;
   text-align: center;
   background-color: #f0f2fa;
+  transition: all 0.2s ease-out;
   border-bottom-left-radius: 0.4rem;
   border-bottom-right-radius: 0.4rem;
-  transition: all 0.2s ease-out;
 }
 .container-grid .grid-b1:hover,
 .container-grid .grid-b2:hover,
@@ -286,8 +286,6 @@ main {
   padding: 2rem 2rem 1.75rem;
   text-align: left;
   background-color: #f0f2fa;
-  border-bottom-left-radius: 0.4rem;
-  border-bottom-right-radius: 0.4rem;
   transition: all 0.2s ease-out;
   border-radius: 0.4rem;
 }

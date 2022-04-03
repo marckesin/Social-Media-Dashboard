@@ -4,10 +4,7 @@ const text = document.querySelectorAll(".text");
 const text2 = document.querySelectorAll(".text-2");
 const dashboard = document.querySelectorAll(".dashboard");
 
-toggle.addEventListener("change", event => {
-  const { checked: state } = event.target;
-
-  console.log(text);
+toggle.addEventListener("change", () => {
   background.classList.toggle("container-main-dark");
   text.forEach(item => {
     item.classList.toggle("text-dark");

@@ -23,8 +23,6 @@
   padding: 2rem 2rem 1.75rem;
   text-align: $text;
   background-color: variables.$light-grayish-blue;
-  border-bottom-left-radius: 0.4rem;
-  border-bottom-right-radius: 0.4rem;
   transition: all 0.2s ease-out;
 
   &:hover {
@@ -152,6 +150,8 @@ main {
   .grid-b3,
   .grid-b4 {
     @include dashboard-layout(center, 3.9rem, center);
+    border-bottom-left-radius: 0.4rem;
+    border-bottom-right-radius: 0.4rem;
   }
 
   .grid-c1 {
