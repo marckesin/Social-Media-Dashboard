@@ -20,6 +20,9 @@ body {
   line-height: normal;
   -webkit-font-smoothing: antialiased;
   font-family: "Inter", sans-serif;
+  position: absolute;
+  z-index: -5;
+  width: 100%;
 }
 
 img,
