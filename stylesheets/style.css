@@ -54,6 +54,7 @@ h6 {
 
 main {
   margin: auto;
+  width: 100%;
 }
 
 .attribution {
@@ -64,12 +65,164 @@ main {
   color: #dc414c;
 }
 
+.container-grid {
+  display: grid;
+  grid-auto-columns: 1fr;
+  row-gap: 1.5rem;
+  column-gap: 2rem;
+  grid-template-areas: "a-1 a-1 a-1 a-2" "b-1 b-2 b-3 b-4" "c-1 c-1 c-1 c-1" "d-1 d-2 d-3 d-4" "d-5 d-6 d-7 d-8";
+}
+.container-grid .bg-light-grayish-blue {
+  background-color: #f0f2fa;
+  border-radius: 0.5rem;
+}
+.container-grid .grid-a1 {
+  grid-area: a-1;
+}
+.container-grid .grid-a2 {
+  grid-area: a-2;
+}
+.container-grid .grid-b1 {
+  grid-area: b-1;
+  padding: 2rem 2rem 1.5rem;
+  text-align: center;
+}
+.container-grid .grid-b1 div {
+  display: flex;
+  justify-content: center;
+}
+.container-grid .grid-b2 {
+  grid-area: b-2;
+  padding: 2rem 2rem 1.5rem;
+  text-align: center;
+}
+.container-grid .grid-b2 div {
+  display: flex;
+  justify-content: center;
+}
+.container-grid .grid-b3 {
+  grid-area: b-3;
+  padding: 2rem 2rem 1.5rem;
+  text-align: center;
+}
+.container-grid .grid-b3 div {
+  display: flex;
+  justify-content: center;
+}
+.container-grid .grid-b4 {
+  grid-area: b-4;
+  padding: 2rem 2rem 1.5rem;
+  text-align: center;
+}
+.container-grid .grid-b4 div {
+  display: flex;
+  justify-content: center;
+}
+.container-grid .grid-c1 {
+  grid-area: c-1;
+}
+.container-grid .grid-d1 {
+  grid-area: d-1;
+  padding: 2rem 2rem 1.5rem;
+  text-align: left;
+}
+.container-grid .grid-d1 div {
+  display: flex;
+  justify-content: space-between;
+}
+.container-grid .grid-d2 {
+  grid-area: d-2;
+  padding: 2rem 2rem 1.5rem;
+  text-align: left;
+}
+.container-grid .grid-d2 div {
+  display: flex;
+  justify-content: space-between;
+}
+.container-grid .grid-d3 {
+  grid-area: d-3;
+  padding: 2rem 2rem 1.5rem;
+  text-align: left;
+}
+.container-grid .grid-d3 div {
+  display: flex;
+  justify-content: space-between;
+}
+.container-grid .grid-d4 {
+  grid-area: d-4;
+  padding: 2rem 2rem 1.5rem;
+  text-align: left;
+}
+.container-grid .grid-d4 div {
+  display: flex;
+  justify-content: space-between;
+}
+.container-grid .grid-d5 {
+  grid-area: d-5;
+  padding: 2rem 2rem 1.5rem;
+  text-align: left;
+}
+.container-grid .grid-d5 div {
+  display: flex;
+  justify-content: space-between;
+}
+.container-grid .grid-d6 {
+  grid-area: d-6;
+  padding: 2rem 2rem 1.5rem;
+  text-align: left;
+}
+.container-grid .grid-d6 div {
+  display: flex;
+  justify-content: space-between;
+}
+.container-grid .grid-d7 {
+  grid-area: d-7;
+  padding: 2rem 2rem 1.5rem;
+  text-align: left;
+}
+.container-grid .grid-d7 div {
+  display: flex;
+  justify-content: space-between;
+}
+.container-grid .grid-d8 {
+  grid-area: d-8;
+  padding: 2rem 2rem 1.5rem;
+  text-align: left;
+}
+.container-grid .grid-d8 div {
+  display: flex;
+  justify-content: space-between;
+}
+
 .container-main {
   height: 100vh;
-  padding: 0 10rem 0.5rem;
+  padding: 0 12rem 0.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+@media (max-width: 991px) {
+  .container-main {
+    height: auto;
+    padding: 3rem 6rem 0.5rem;
+  }
+
+  .container-grid {
+    margin-bottom: 3rem;
+    grid-template-areas: "a-1 a-2" "b-1 b-2" "b-3 b-4" "c-1 c-1" "d-1 d-2" "d-3 d-4" "d-5 d-6" "d-7 d-8";
+  }
+}
+@media (max-width: 600px) {
+  .container-main {
+    height: auto;
+    padding: 3rem 1.5rem 0.5rem;
+  }
+
+  .container-grid {
+    margin-bottom: 3rem;
+    grid-template-areas: "a-1" "a-2" "b-1" "b-2" "b-3" "b-4" "c-1" "d-1" "d-2" "d-3" "d-4" "d-5" "d-6" "d-7" "d-8";
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

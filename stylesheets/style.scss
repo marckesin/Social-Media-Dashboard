@@ -1,8 +1,20 @@
 @use "reset";
 @use "variables";
 
+@mixin dashboard-layout($pos, $justify, $text: center) {
+  grid-area: $pos;
+  padding: 2rem 2rem 1.5rem;
+  text-align: $text;
+
+  div {
+    display: flex;
+    justify-content: $justify;
+  }
+}
+
 main {
   margin: auto;
+  width: 100%;
 }
 
 .attribution {
@@ -14,10 +26,121 @@ main {
   }
 }
 
+.container-grid {
+  display: grid;
+  grid-auto-columns: 1fr;
+  row-gap: 1.5rem;
+  column-gap: 2rem;
+  grid-template-areas:
+    "a-1 a-1 a-1 a-2"
+    "b-1 b-2 b-3 b-4"
+    "c-1 c-1 c-1 c-1"
+    "d-1 d-2 d-3 d-4"
+    "d-5 d-6 d-7 d-8";
+
+  .bg-light-grayish-blue {
+    background-color: variables.$light-grayish-blue;
+    border-radius: 0.5rem;
+  }
+
+  .grid-a1 {
+    grid-area: a-1;
+  }
+  .grid-a2 {
+    grid-area: a-2;
+  }
+  .grid-b1 {
+    @include dashboard-layout(b-1, center);
+  }
+  .grid-b2 {
+    @include dashboard-layout(b-2, center);
+  }
+  .grid-b3 {
+    @include dashboard-layout(b-3, center);
+  }
+  .grid-b4 {
+    @include dashboard-layout(b-4, center);
+  }
+  .grid-c1 {
+    grid-area: c-1;
+  }
+  .grid-d1 {
+    @include dashboard-layout(d-1, space-between, left);
+  }
+  .grid-d2 {
+    @include dashboard-layout(d-2, space-between, left);
+  }
+  .grid-d3 {
+    @include dashboard-layout(d-3, space-between, left);
+  }
+  .grid-d4 {
+    @include dashboard-layout(d-4, space-between, left);
+  }
+  .grid-d5 {
+    @include dashboard-layout(d-5, space-between, left);
+  }
+  .grid-d6 {
+    @include dashboard-layout(d-6, space-between, left);
+  }
+  .grid-d7 {
+    @include dashboard-layout(d-7, space-between, left);
+  }
+  .grid-d8 {
+    @include dashboard-layout(d-8, space-between, left);
+  }
+}
+
 .container-main {
   height: 100vh;
-  padding: 0 10rem 0.5rem;
+  padding: 0 12rem 0.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+@media (max-width: 991px) {
+  .container-main {
+    height: auto;
+    padding: 3rem 6rem 0.5rem;
+  }
+
+  .container-grid {
+    margin-bottom: 3rem;
+    grid-template-areas:
+      "a-1 a-2"
+      "b-1 b-2"
+      "b-3 b-4"
+      "c-1 c-1"
+      "d-1 d-2"
+      "d-3 d-4"
+      "d-5 d-6"
+      "d-7 d-8";
+  }
+}
+
+@media (max-width: 600px) {
+  .container-main {
+    height: auto;
+    padding: 3rem 1.5rem 0.5rem;
+  }
+
+  .container-grid {
+    margin-bottom: 3rem;
+    grid-template-areas:
+      "a-1"
+      "a-2"
+      "b-1"
+      "b-2"
+      "b-3"
+      "b-4"
+      "c-1"
+      "d-1"
+      "d-2"
+      "d-3"
+      "d-4"
+      "d-5"
+      "d-6"
+      "d-7"
+      "d-8";
+  }
 }
