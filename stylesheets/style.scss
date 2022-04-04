@@ -33,18 +33,9 @@
   div:nth-child(1) {
     color: variables.$dark-grayish-blue;
     font-weight: 700;
-  }
-
-  div:nth-child(2) {
-    margin-top: 1.5rem;
-    align-items: baseline;
-  }
-
-  div {
     display: flex;
     justify-content: $justify;
     align-items: center;
-    gap: 0.65rem;
   }
 
   h3 {
@@ -69,7 +60,6 @@
 }
 
 main {
-  margin: auto;
   width: 100%;
 }
 
@@ -80,6 +70,27 @@ main {
   a {
     color: variables.$bright-red;
   }
+}
+
+.baseline {
+  margin-top: 1.5rem;
+  align-items: baseline;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+
+  div {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+  }
+}
+
+.background-dark {
+  background-color: variables.$very-dark-blue;
+}
+.background-dark-1 {
+  background-color: variables.$very-dark-blue-1 !important;
 }
 
 .border-top-facebook {
@@ -100,6 +111,7 @@ main {
   grid-auto-columns: 1fr;
   row-gap: 1.5rem;
   column-gap: 2rem;
+  margin-bottom: 3rem;
   grid-template-areas:
     "a-1 a-1 a-1 a-2"
     "b-1 b-2 b-3 b-4"
@@ -204,38 +216,23 @@ main {
 
 .container-main {
   height: 100vh;
-  padding: 0 12rem 0.5rem;
+  padding: 3rem 12rem 0.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
 
-  &::after {
+  .pattern {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
-    height: 19rem;
+    height: 17.5rem;
     width: 100%;
     z-index: -2;
     background-color: variables.$very-pale-blue;
     border-bottom-left-radius: 1.5rem;
     border-bottom-right-radius: 1.5rem;
-  }
-}
-
-.container-main-dark {
-  background-color: variables.$very-dark-blue;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -2;
-
-  &::after {
-    background-color: variables.$very-dark-blue-1;
-    z-index: -2;
   }
 }
 
@@ -295,16 +292,18 @@ main {
     content: "";
     height: 23px;
     width: 23px;
-    left: 4px;
-    top: 2px;
+    left: 3px;
+    top: 3px;
     background-color: variables.$white;
     border-radius: 50%;
     -webkit-transition: all 0.2s ease-in;
     transition: all 0.2s ease-in;
   }
+}
 
-  &:hover {
-    background-image: linear-gradient(-90deg, variables.$toggle);
+.slider-dark {
+  &::before {
+    background-color: variables.$very-dark-blue-1 !important;
   }
 }
 
@@ -324,6 +323,13 @@ main {
 .text-lime-green {
   color: variables.$lime-green;
   font-weight: 700;
+}
+
+.today {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
 }
 
 @media (max-width: 991px) {
