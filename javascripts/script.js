@@ -4,7 +4,6 @@ const pattern = document.querySelector(".pattern");
 const text = document.querySelectorAll(".text");
 const text2 = document.querySelectorAll(".text-2");
 const dashboard = document.querySelectorAll(".dashboard");
-
 const slider = document.querySelector(".slider");
 
 toggle.addEventListener("change", () => {
