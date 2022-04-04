@@ -56,7 +56,6 @@ h6 {
 }
 
 main {
-  margin: auto;
   width: 100%;
 }
 
@@ -66,6 +65,27 @@ main {
 }
 .attribution a {
   color: #dc414c;
+}
+
+.baseline {
+  margin-top: 1.5rem;
+  align-items: baseline;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.baseline div {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.background-dark {
+  background-color: #1e202a;
+}
+
+.background-dark-1 {
+  background-color: #1f212e !important;
 }
 
 .border-top-facebook {
@@ -141,6 +161,7 @@ main {
   grid-auto-columns: 1fr;
   row-gap: 1.5rem;
   column-gap: 2rem;
+  margin-bottom: 3rem;
   grid-template-areas: "a-1 a-1 a-1 a-2" "b-1 b-2 b-3 b-4" "c-1 c-1 c-1 c-1" "d-1 d-2 d-3 d-4" "d-5 d-6 d-7 d-8";
 }
 .container-grid .grid-a1 {
@@ -200,22 +221,9 @@ main {
 .container-grid .grid-b4 div:nth-child(1) {
   color: #63687e;
   font-weight: 700;
-}
-.container-grid .grid-b1 div:nth-child(2),
-.container-grid .grid-b2 div:nth-child(2),
-.container-grid .grid-b3 div:nth-child(2),
-.container-grid .grid-b4 div:nth-child(2) {
-  margin-top: 1.5rem;
-  align-items: baseline;
-}
-.container-grid .grid-b1 div,
-.container-grid .grid-b2 div,
-.container-grid .grid-b3 div,
-.container-grid .grid-b4 div {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.65rem;
 }
 .container-grid .grid-b1 h3,
 .container-grid .grid-b2 h3,
@@ -310,30 +318,9 @@ main {
 .container-grid .grid-d8 div:nth-child(1) {
   color: #63687e;
   font-weight: 700;
-}
-.container-grid .grid-d1 div:nth-child(2),
-.container-grid .grid-d2 div:nth-child(2),
-.container-grid .grid-d3 div:nth-child(2),
-.container-grid .grid-d4 div:nth-child(2),
-.container-grid .grid-d5 div:nth-child(2),
-.container-grid .grid-d6 div:nth-child(2),
-.container-grid .grid-d7 div:nth-child(2),
-.container-grid .grid-d8 div:nth-child(2) {
-  margin-top: 1.5rem;
-  align-items: baseline;
-}
-.container-grid .grid-d1 div,
-.container-grid .grid-d2 div,
-.container-grid .grid-d3 div,
-.container-grid .grid-d4 div,
-.container-grid .grid-d5 div,
-.container-grid .grid-d6 div,
-.container-grid .grid-d7 div,
-.container-grid .grid-d8 div {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 0.65rem;
 }
 .container-grid .grid-d1 h3,
 .container-grid .grid-d2 h3,
@@ -376,37 +363,23 @@ main {
 
 .container-main {
   height: 100vh;
-  padding: 0 12rem 0.5rem;
+  padding: 3rem 12rem 0.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
 }
-.container-main::after {
+.container-main .pattern {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
-  height: 19rem;
+  height: 17.5rem;
   width: 100%;
   z-index: -2;
   background-color: #f5f7ff;
   border-bottom-left-radius: 1.5rem;
   border-bottom-right-radius: 1.5rem;
-}
-
-.container-main-dark {
-  background-color: #1e202a;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -2;
-}
-.container-main-dark::after {
-  background-color: #1f212e;
-  z-index: -2;
 }
 
 .dashboard-dark {
@@ -457,15 +430,16 @@ main {
   content: "";
   height: 23px;
   width: 23px;
-  left: 4px;
-  top: 2px;
+  left: 3px;
+  top: 3px;
   background-color: white;
   border-radius: 50%;
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
 }
-.slider:hover {
-  background-image: linear-gradient(-90deg, #378fe6, #3eda82);
+
+.slider-dark::before {
+  background-color: #1f212e !important;
 }
 
 .text-bright-red {
@@ -484,6 +458,13 @@ main {
 .text-lime-green {
   color: #1db489;
   font-weight: 700;
+}
+
+.today {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
 }
 
 @media (max-width: 991px) {
